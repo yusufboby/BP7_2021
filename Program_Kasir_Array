@@ -1,0 +1,92 @@
+package bp1_2021;
+import java.util.Scanner;
+public class BP7_2021 {
+    public static void main(String[] args) {
+        
+ //MEMANGGIL SCANNER//
+Scanner input = new Scanner(System.in);
+
+//INISIALISASI//		
+String[] makanan = new String[5];
+int indeks = 0;
+int pilih = 0;
+int[] harga = new int[5];
+int[] porsi = new int[5];
+int[] totalBiaya = new int[5];
+int grandTotal = 0;
+
+        System.out.println("=SELAMAT DATANG DI WARUNG KAMI=");
+        do {System.out.print("======== MENU  MAKANAN ========\n"
+       + "1. Sate            [Rp. 20.000]\n"
+       + "2. Pecel           [Rp. 10.000]\n"
+       + "3. Penyetan        [Rp. 10.000]\n"
+       + "4. Nasi Goreng     [Rp. 12.000]\n"
+       + "5. Mie Goreng      [Rp. 12.000]\n"
+       + "6. Selesai \n");    
+        
+        
+ //INPUT//           
+            System.out.print("MASUKKAN PILIHAN ANDA = ");
+	pilih = input.nextInt();
+			
+	switch (pilih) {
+                          case 1:
+                          makanan[indeks] = "Sate";
+                          harga[indeks] = 20000;
+                         System.out.print("BANYAKNYA PORSI = ");
+                          porsi[indeks] = input.nextInt();
+                          totalBiaya[indeks] = harga[indeks] * porsi[indeks];
+                          break;
+                          
+                          case 2:
+                          makanan[indeks] = "Pecel";
+                          harga[indeks] = 10000;
+                         System.out.print("BANYAKNYA PORSI = ");
+                          porsi[indeks] = input.nextInt();
+                          totalBiaya[indeks] = harga[indeks] * porsi[indeks];
+                          break;
+                          
+                          case 3:
+                          makanan[indeks] = "Penyetan";
+                          harga[indeks] = 10000;
+                         System.out.print("BANYAKNYA PORSI = ");
+                          porsi[indeks] = input.nextInt();
+                          totalBiaya[indeks] = harga[indeks] * porsi[indeks];
+                          break;
+                          
+                          case 4:
+                          makanan[indeks] = "Nasi Goreng";
+                          harga[indeks] = 12000;
+                         System.out.print("BANYAKNYA PORSI = ");
+                          porsi[indeks] = input.nextInt();
+                          totalBiaya[indeks] = harga[indeks] * porsi[indeks];
+                          break;
+                          
+                          case 5:
+                          makanan[indeks] = "Mie Goreng";
+                          harga[indeks] = 12000;
+                         System.out.print("BANYAKNYA PORSI = ");
+                          porsi[indeks] = input.nextInt();
+                          totalBiaya[indeks] = harga[indeks] * porsi[indeks];
+                          break;
+	}indeks++;
+        
+        
+ //MENAMPILKAN OUTPUT//       
+        } while (pilih != 6);
+		
+                System.out.println("====== KERANJANG BELANJA ======");
+	for (int i = 0; i < indeks - 1; i++) {
+	System.out.println((i + 1) + ". " + makanan[i]);
+	System.out.println("HARGA : Rp. " + harga[i]);
+	System.out.println("TOTAL PORSI : Rp. " + porsi[i]);
+	System.out.println("TOTAL HARGA : Rp. " + totalBiaya[i]);
+                 grandTotal = grandTotal + totalBiaya[i];
+                 
+	System.out.println("===============================");
+	}
+		
+        System.out.println("GRAND TOTAL : Rp. " + grandTotal);
+    }
+}
+
